@@ -1,0 +1,60 @@
+.navMenu {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  transform: translateX(0%);
+  height: 100%;
+  width: 80vw;
+  background-color: white;
+  transition: 0.5s;
+  z-index: 8888;
+  border-right: 1px solid black;
+}
+
+.navMenuHidden {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  transform: translateX(-200%);
+  height: 100%;
+  width: 20vw;
+  background-color: white;
+  transition: 0.5s;
+  z-index: 8888;
+  border-right: 1px solid black;
+}
+
+.x {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+}
+.xIcon {
+  cursor: pointer;
+}
+
+.navMenuCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+  gap: 10px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.home {
+  cursor: pointer;
+}
+.calendar {
+  cursor: pointer;
+}
+.wishlist {
+  cursor: pointer;
+}
+.adult {
+  cursor: pointer;
+}
+.adult:hover {
+  color: red;
+}

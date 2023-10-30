@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 3%;
+  left: 10%;
+}
+.navClick {
+  display: flex;
+  cursor: pointer;
+  z-index: 9999;
+}

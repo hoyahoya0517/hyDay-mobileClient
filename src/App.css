@@ -1,0 +1,19 @@
+.fc-media-screen {
+  width: 100%;
+}
+.fc-header-toolbar {
+  margin: 0;
+}
+.fc-toolbar {
+  margin: 0;
+}
+
+.fc-day-sun a {
+  color: rgba(204, 10, 0, 0.795);
+}
+.fc-day-sat a {
+  color: rgb(0, 117, 206);
+}
+.fc-daygrid-day-top {
+  user-select: none;
+}
