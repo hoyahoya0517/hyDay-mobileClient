@@ -80,10 +80,10 @@ export default function Event({
     events = events.filter((event) => {
       return event.title?.trim().length !== 0;
     });
-    events = events.map((event) => {
-      let newTitle = event.title!.trim();
-      return { ...event, title: newTitle };
-    });
+    // events = events.map((event) => {
+    //   let newTitle = event.title!.trim();
+    //   return { ...event, title: newTitle };
+    // });
     if (events.length === 0 && memoLengthstate === 0) {
       deleteDayMutate.mutate({ date });
     } else createEventMutate.mutate({ date, events });

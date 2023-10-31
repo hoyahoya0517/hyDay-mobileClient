@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 10px;
+  margin-bottom: 1.5rem;
 }
 .memoTop {
   display: flex;
