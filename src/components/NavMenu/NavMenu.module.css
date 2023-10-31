@@ -63,6 +63,9 @@
 .adult:hover {
   color: red;
 }
+.setting {
+  cursor: pointer;
+}
 
 .navMenuFooter {
   flex-basis: 25%;

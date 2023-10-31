@@ -3,13 +3,13 @@
   flex-direction: row;
   position: fixed;
   bottom: 2.5%;
-  right: 5%;
+  right: 5.5%;
   z-index: 8888;
 }
 .navClick {
   cursor: pointer;
   z-index: 9999;
-  width: 70px;
+  width: 60px;
 }
 .navClick img {
   width: 100%;

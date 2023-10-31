@@ -34,7 +34,8 @@ export default function NavMenu(): JSX.Element {
           CALENDAR
         </div>
         <div className={styles.wishlist}>WISHLIST</div>
-        <div className={styles.adult}>19❤</div>
+        <div className={styles.adult}>19</div>
+        <div className={styles.setting}>SETTING</div>
       </div>
       <div className={styles.navMenuFooter}>
         <div className={styles.phone}>CS : 010.6272.6828</div>

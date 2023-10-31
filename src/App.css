@@ -15,7 +15,10 @@
   align-items: center;
 }
 .fc-event-title {
-  font-size: 0.6rem;
+  font-size: 0.5rem;
+}
+.fc-sticky {
+  font-size: 0.5rem;
 }
 .fc-daygrid-more-link {
   font-size: 0.7rem;
