@@ -1,5 +1,4 @@
 import styles from "./Nav.module.css";
-import { IoMenu } from "react-icons/io5";
 import NavMenu from "../NavMenu/NavMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { NavStateType, navOff, navOn } from "../../redux/redux";

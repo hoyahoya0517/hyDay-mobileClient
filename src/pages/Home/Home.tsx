@@ -9,6 +9,7 @@ import { useEffect } from "react";
 export default function Home(): JSX.Element {
   useEffect(() => {
     dispatch(navOff());
+    document.body.style.overflow = "hidden";
   }, []);
   const navigate = useNavigate();
   const dispatch = useDispatch();
