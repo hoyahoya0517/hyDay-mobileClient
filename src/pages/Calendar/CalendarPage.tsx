@@ -90,7 +90,7 @@ export default function CalendarPage(): JSX.Element {
         <FullCalendar
           plugins={[dayGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"
-          longPressDelay={500}
+          longPressDelay={300}
           weekends={true}
           headerToolbar={{
             start: "today",

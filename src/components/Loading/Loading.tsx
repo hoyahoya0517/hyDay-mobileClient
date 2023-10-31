@@ -1,8 +1,12 @@
 import styles from "./Loading.module.css";
 import { GiMushroom } from "react-icons/gi";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Home(): JSX.Element {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+  }, []);
   return (
     <div className={styles.loading}>
       <motion.div
