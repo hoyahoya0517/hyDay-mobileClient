@@ -131,12 +131,12 @@ export default function Event({
           <BsPlus
             className={styles.eventTopMenuPlus}
             onClick={handlePlus}
-            size={30}
+            size={25}
           />
           <BsCheck
             className={styles.eventTopMenuCheck}
             onClick={handleCheck}
-            size={30}
+            size={25}
           />
         </div>
       </div>

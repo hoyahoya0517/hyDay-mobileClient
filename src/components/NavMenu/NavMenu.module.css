@@ -1,4 +1,6 @@
 .navMenu {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0%;
   left: 0%;
@@ -12,6 +14,8 @@
 }
 
 .navMenuHidden {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0%;
   left: 0%;
@@ -27,22 +31,22 @@
 .x {
   display: flex;
   justify-content: end;
-  padding: 10px;
+  flex-basis: 5%;
 }
 .xIcon {
   cursor: pointer;
 }
 
 .navMenuCenter {
+  flex-basis: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-size: 14px;
   line-height: 30px;
   letter-spacing: 0.5px;
   font-weight: 700;
-  padding: 40px 0;
+  padding: 70px 20px;
 }
 .home {
   cursor: pointer;
@@ -58,4 +62,18 @@
 }
 .adult:hover {
   color: red;
+}
+
+.navMenuFooter {
+  flex-basis: 25%;
+  border-top: solid 1px #000;
+  margin: 0 20px;
+}
+.phone {
+  font-weight: 700;
+  font-size: 12px;
+  padding: 10px 0;
+}
+.infoBox {
+  font-size: 12px;
 }

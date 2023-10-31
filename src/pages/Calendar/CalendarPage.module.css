@@ -6,4 +6,5 @@
 .calendar {
   display: flex;
   color: rgb(198, 91, 14);
+  margin-top: 0.2rem;
 }

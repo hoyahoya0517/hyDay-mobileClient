@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Open+Sans:wght@500&family=Poppins:wght@500&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
@@ -13,7 +14,7 @@ body {
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
   color: #121110;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "NotoSansKR", "Poppins", sans-serif !important;
   user-select: none;
 }
 a {

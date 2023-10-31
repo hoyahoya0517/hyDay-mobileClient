@@ -36,6 +36,16 @@ export default function NavMenu(): JSX.Element {
         <div className={styles.wishlist}>WISHLIST</div>
         <div className={styles.adult}>19❤</div>
       </div>
+      <div className={styles.navMenuFooter}>
+        <div className={styles.phone}>CS : 010.6272.6828</div>
+        <div className={styles.infoBox}>
+          am 11:00 - pm 18:00
+          <br />
+          lunch pm 12:00 - 13:00
+          <br />
+          Sat, Sun, Holiday OFF
+        </div>
+      </div>
     </div>
   );
 }
