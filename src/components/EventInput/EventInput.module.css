@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   height: 35px;
+  padding-top: 5px;
 }
 
 .eventInput input {
