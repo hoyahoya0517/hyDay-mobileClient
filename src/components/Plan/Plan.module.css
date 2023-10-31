@@ -18,13 +18,13 @@
   font-size: 1rem;
   margin: 0 15px;
   border-bottom: 1px solid rgba(205, 205, 205, 0.751);
-  font-weight: 700;
 }
 
 .planMain {
   display: flex;
   height: auto;
   flex-direction: column;
+  padding: 0 15px;
 }
 .planMain::-webkit-scrollbar {
   width: 5px; /* 스크롤바의 너비 */

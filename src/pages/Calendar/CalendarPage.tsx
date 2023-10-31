@@ -106,7 +106,7 @@ export default function CalendarPage(): JSX.Element {
           eventColor={"rgb(198, 91, 14)"}
           eventTextColor={"black"}
           eventOrder={"-id"}
-          contentHeight={400}
+          contentHeight={450}
         />
       </div>
       <Plan clickDay={clickDay} hyDay={hyDay} />
