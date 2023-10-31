@@ -15,9 +15,10 @@
   display: flex;
   height: 40px;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin: 0 15px;
   border-bottom: 1px solid rgba(205, 205, 205, 0.751);
+  font-weight: 700;
 }
 
 .planMain {
