@@ -99,7 +99,7 @@ export default function Memo({
         <div className={styles.memoTopMenu}>
           <BsCheck
             className={styles.memoTopMenuCheck}
-            size={25}
+            size={23}
             onClick={handleCheck}
           />
         </div>
