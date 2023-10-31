@@ -4,20 +4,20 @@
   height: auto;
   flex-grow: 1;
   flex-direction: column;
-  background: url("https://res.cloudinary.com/hoyahoya/image/upload/v1696395081/hy/5555_tg4ic7.jpg")
+  /* background: url("https://res.cloudinary.com/hoyahoya/image/upload/v1696395081/hy/5555_tg4ic7.jpg")
     no-repeat;
   background-size: cover;
-  background-position: 50% 85%;
-  background-attachment: fixed;
+  background-position: 50% 85%; */
+  background-color: rgba(255, 215, 13, 0.15);
 }
 
 .planDay {
   display: flex;
-  height: 50px;
+  height: 40px;
   align-items: center;
-  font-size: 1.3rem;
-  font-weight: 700;
-  padding: 0 13px;
+  font-size: 0.9rem;
+  margin: 0 15px;
+  border-bottom: 1px solid rgba(205, 205, 205, 0.751);
 }
 
 .planMain {

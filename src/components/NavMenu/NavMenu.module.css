@@ -34,14 +34,15 @@
 }
 
 .navMenuCenter {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 0;
-  gap: 10px;
-  font-size: 18px;
-  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 0.5px;
   font-weight: 700;
+  padding: 40px 0;
 }
 .home {
   cursor: pointer;

@@ -7,8 +7,21 @@
 .fc-toolbar {
   margin: 0;
 }
-#fc-dom-1 {
-  font-size: 1.4rem;
+.fc .fc-toolbar-title {
+  font-size: 1.2rem;
+}
+.fc-event-title-container {
+  display: flex;
+  align-items: center;
+}
+.fc-event-title {
+  font-size: 0.6rem;
+}
+.fc-daygrid-more-link {
+  font-size: 0.7rem;
+}
+.fc-more-link {
+  font-size: 0.7rem;
 }
 
 .fc-day-sun a {
