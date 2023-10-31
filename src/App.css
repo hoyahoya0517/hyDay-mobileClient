@@ -7,6 +7,9 @@
 .fc-toolbar {
   margin: 0;
 }
+#fc-dom-1 {
+  font-size: 1.4rem;
+}
 
 .fc-day-sun a {
   color: rgba(204, 10, 0, 0.795);

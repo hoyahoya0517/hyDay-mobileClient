@@ -6,13 +6,14 @@ import { useQuery } from "@tanstack/react-query";
 import { getHyDays, hyDay, hyEvent } from "../../api/calendar";
 import Loading from "../../components/Loading/Loading";
 import Plan from "../../components/Plan/Plan";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import moment from "moment";
 import { EventInput } from "@fullcalendar/core";
 import { useDispatch } from "react-redux";
-import { navOff } from "../../redux/redux";
+import { NavStateType, navOff } from "../../redux/redux";
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
+import { useSelector } from "react-redux";
 
 export default function CalendarPage(): JSX.Element {
   useEffect(() => {
@@ -20,6 +21,11 @@ export default function CalendarPage(): JSX.Element {
   }, []);
   const dispatch = useDispatch();
   // const today = moment(new Date()).format("YYYY-MM-DD");
+  const navState = useSelector((state: NavStateType) => state.nav);
+  useEffect(() => {
+    if (navState) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "unset";
+  }, [navState]);
   const [hyDay, setHyDay] = useState<hyDay>(null);
   const [clickDay, setClickDay] = useState<string>("");
   const [event, setEvent] = useState<EventInput[]>([]);
@@ -84,7 +90,7 @@ export default function CalendarPage(): JSX.Element {
         <FullCalendar
           plugins={[dayGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"
-          longPressDelay={1}
+          longPressDelay={700}
           weekends={true}
           headerToolbar={{
             start: "today",
@@ -100,7 +106,7 @@ export default function CalendarPage(): JSX.Element {
           eventColor={"rgb(198, 91, 14)"}
           eventTextColor={"black"}
           eventOrder={"-id"}
-          contentHeight={500}
+          contentHeight={400}
         />
       </div>
       <Plan clickDay={clickDay} hyDay={hyDay} />

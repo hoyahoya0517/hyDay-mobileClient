@@ -7,7 +7,7 @@
   background: url("https://res.cloudinary.com/hoyahoya/image/upload/v1696395081/hy/5555_tg4ic7.jpg")
     no-repeat;
   background-size: cover;
-  background-position: 50% 75%;
+  background-position: 50% 95%;
 }
 
 .planDay {
@@ -15,7 +15,7 @@
   height: 50px;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 

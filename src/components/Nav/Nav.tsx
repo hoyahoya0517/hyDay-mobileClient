@@ -15,7 +15,10 @@ export default function Nav(): JSX.Element {
   return (
     <div className={styles.nav}>
       <div className={styles.navClick}>
-        <IoMenu size={43} onClick={navHandle} />
+        <img
+          src="https://res.cloudinary.com/hoyahoya/image/upload/v1698726480/hy/yefy1gnztcubhuzbixb5.png"
+          onClick={navHandle}
+        />
       </div>
       <NavMenu />
     </div>
