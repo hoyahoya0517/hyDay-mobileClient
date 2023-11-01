@@ -32,10 +32,10 @@ export default function Home(): JSX.Element {
           },
         }}
         className={styles.heart}
-        onMouseOver={() => {
+        onTouchStart={() => {
           setHeartOn(true);
         }}
-        onMouseOut={() => {
+        onTouchEnd={() => {
           setHeartOn(false);
         }}
       >
