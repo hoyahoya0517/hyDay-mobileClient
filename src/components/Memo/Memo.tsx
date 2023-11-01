@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, KeyboardEvent } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import styles from "./Memo.module.css";
 import { BsCheck } from "react-icons/bs";
@@ -93,9 +93,11 @@ export default function Memo({
       theme: "colored",
     });
   };
-  const handleEnter = () => {
-    if (scrollRef.current)
-      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+  const handleEnter = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter") {
+      if (scrollRef.current)
+        scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
   return (
     <div className={styles.memo}>
@@ -116,7 +118,7 @@ export default function Memo({
           value={memoValue}
           onChange={(ev) => setMemoValue(ev.target.value)}
           spellCheck={false}
-          autoFocus
+          onKeyDown={handleEnter}
         />
       </div>
     </div>
