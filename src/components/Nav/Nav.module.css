@@ -6,11 +6,19 @@
   right: 5.5%;
   z-index: 8888;
 }
-.navClick {
+.navClickOn {
   cursor: pointer;
   z-index: 9999;
   width: 60px;
+  transform: rotate(70deg);
+  transition: 0.3s;
 }
-.navClick img {
+.navClickOff {
+  cursor: pointer;
+  z-index: 9999;
+  width: 60px;
+  transition: 0.3s;
+}
+.nav img {
   width: 100%;
 }

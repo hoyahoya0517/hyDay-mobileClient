@@ -13,7 +13,9 @@ export default function Nav(): JSX.Element {
 
   return (
     <div className={styles.nav}>
-      <div className={styles.navClick}>
+      <div
+        className={navState ? `${styles.navClickOn}` : `${styles.navClickOff}`}
+      >
         <img
           src="https://res.cloudinary.com/hoyahoya/image/upload/v1698726480/hy/yefy1gnztcubhuzbixb5.png"
           onClick={navHandle}
