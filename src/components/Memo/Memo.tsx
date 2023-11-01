@@ -102,7 +102,7 @@ export default function Memo({
   return (
     <div className={styles.memo}>
       <div className={styles.memoTop}>
-        <div className={styles.memoTopLogo}>Memoo</div>
+        <div className={styles.memoTopLogo}>Memo</div>
         <div className={styles.memoTopMenu}>
           <BsCheck
             className={styles.memoTopMenuCheck}
