@@ -1,19 +1,22 @@
 import styles from "./Home.module.css";
-import { useNavigate } from "react-router-dom";
 import { BsSuitHeartFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { navOff } from "../../redux/redux";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import moment from "moment";
 
 export default function Home(): JSX.Element {
+  const [heartOn, setHeartOn] = useState(false);
+  const [day, setDay] = useState(
+    moment(moment(new Date()).format("YYYY-MM-DD")).diff("2023-05-17", "days")
+  );
   useEffect(() => {
     dispatch(navOff());
     document.body.style.overflow = "hidden";
   }, []);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  console.log(day);
   return (
     <div className={styles.home}>
       <motion.div
@@ -29,14 +32,17 @@ export default function Home(): JSX.Element {
           },
         }}
         className={styles.heart}
+        onMouseOver={() => {
+          setHeartOn(true);
+        }}
+        onMouseOut={() => {
+          setHeartOn(false);
+        }}
       >
-        <BsSuitHeartFill
-          size={80}
-          style={{ color: "rgb(240, 0, 0)" }}
-          onClick={() => {
-            navigate("/calendar");
-          }}
-        />
+        <BsSuitHeartFill size={80} style={{ color: "rgb(240, 0, 0)" }} />
+        <div className={heartOn ? `${styles.dayOn}` : `${styles.dayOff}`}>
+          {day}
+        </div>
       </motion.div>
     </div>
   );
