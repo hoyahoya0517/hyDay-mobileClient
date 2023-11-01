@@ -96,17 +96,13 @@ export default function Memo({
   const handleEnter = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter") {
       if (scrollRef.current)
-        scrollRef.current.scrollIntoView({
-          behavior: "smooth",
-          block: "end",
-          inline: "nearest",
-        });
+        scrollRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
   return (
     <div className={styles.memo}>
       <div className={styles.memoTop}>
-        <div className={styles.memoTopLogo}>Memo</div>
+        <div className={styles.memoTopLogo}>Memoo</div>
         <div className={styles.memoTopMenu}>
           <BsCheck
             className={styles.memoTopMenuCheck}
@@ -115,7 +111,7 @@ export default function Memo({
           />
         </div>
       </div>
-      <div className={styles.memoMain} ref={scrollRef}>
+      <div className={styles.memoMain}>
         <TextareaAutosize
           className={styles.memoTextarea}
           minRows={3}
@@ -125,6 +121,7 @@ export default function Memo({
           onKeyDown={handleEnter}
         />
       </div>
+      <div ref={scrollRef}></div>
     </div>
   );
 }
