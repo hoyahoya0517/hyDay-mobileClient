@@ -16,7 +16,7 @@ export default function Memo({
   hyDay: hyDay | undefined;
   clickDay: string;
 }): JSX.Element {
-  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const scrollRef = useRef<HTMLTextAreaElement | null>(null);
   const queryClient = useQueryClient();
   const eventsLengthstate = useSelector(
     (state: LengthStateType) => state.eventsLength
@@ -96,7 +96,11 @@ export default function Memo({
   const handleEnter = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter") {
       if (scrollRef.current)
-        scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+        scrollRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "end",
+          inline: "nearest",
+        });
     }
   };
   return (
@@ -111,8 +115,9 @@ export default function Memo({
           />
         </div>
       </div>
-      <div className={styles.memoMain} ref={scrollRef}>
+      <div className={styles.memoMain}>
         <TextareaAutosize
+          ref={scrollRef}
           className={styles.memoTextarea}
           minRows={3}
           value={memoValue}
