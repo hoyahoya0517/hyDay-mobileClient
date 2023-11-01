@@ -96,7 +96,7 @@ export default function Memo({
   const handleEnter = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter") {
       if (scrollRef.current)
-        scrollRef.current.scrollIntoView({ behavior: "smooth" });
+        scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   };
   return (
