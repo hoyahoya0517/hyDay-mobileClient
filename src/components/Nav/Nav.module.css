@@ -11,13 +11,13 @@
   z-index: 9999;
   width: 60px;
   transform: rotate(70deg);
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .navClickOff {
   cursor: pointer;
   z-index: 9999;
   width: 60px;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .nav img {
   width: 100%;
