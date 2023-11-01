@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import styles from "./Memo.module.css";
 import { BsCheck } from "react-icons/bs";
@@ -16,6 +16,7 @@ export default function Memo({
   hyDay: hyDay | undefined;
   clickDay: string;
 }): JSX.Element {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const queryClient = useQueryClient();
   const eventsLengthstate = useSelector(
     (state: LengthStateType) => state.eventsLength
@@ -92,6 +93,10 @@ export default function Memo({
       theme: "colored",
     });
   };
+  const handleEnter = () => {
+    if (scrollRef.current)
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className={styles.memo}>
       <div className={styles.memoTop}>
@@ -104,13 +109,14 @@ export default function Memo({
           />
         </div>
       </div>
-      <div className={styles.memoMain}>
+      <div className={styles.memoMain} ref={scrollRef}>
         <TextareaAutosize
           className={styles.memoTextarea}
           minRows={3}
           value={memoValue}
           onChange={(ev) => setMemoValue(ev.target.value)}
           spellCheck={false}
+          autoFocus
         />
       </div>
     </div>
