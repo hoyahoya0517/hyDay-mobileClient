@@ -38,7 +38,7 @@ export default function NavMenu(): JSX.Element {
         <div className={styles.setting}>SETTING</div>
       </div>
       <div className={styles.navMenuFooter}>
-        <div className={styles.phone}>CS : 010.6272.6828</div>
+        <div className={styles.phone}>Contact</div>
         <div className={styles.infoBox}>
           am 11:00 - pm 18:00
           <br />
