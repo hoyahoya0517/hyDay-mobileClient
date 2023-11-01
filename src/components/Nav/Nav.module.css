@@ -10,7 +10,7 @@
   cursor: pointer;
   z-index: 9999;
   width: 60px;
-  transform: rotate(70deg);
+  transform: rotate(65deg);
   transition: 0.5s;
 }
 .navClickOff {
