@@ -16,7 +16,7 @@ export default function Memo({
   hyDay: hyDay | undefined;
   clickDay: string;
 }): JSX.Element {
-  const scrollRef = useRef<HTMLTextAreaElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const queryClient = useQueryClient();
   const eventsLengthstate = useSelector(
     (state: LengthStateType) => state.eventsLength
@@ -115,9 +115,8 @@ export default function Memo({
           />
         </div>
       </div>
-      <div className={styles.memoMain}>
+      <div className={styles.memoMain} ref={scrollRef}>
         <TextareaAutosize
-          ref={scrollRef}
           className={styles.memoTextarea}
           minRows={3}
           value={memoValue}
