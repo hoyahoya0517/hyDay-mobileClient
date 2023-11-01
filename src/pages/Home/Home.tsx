@@ -16,7 +16,6 @@ export default function Home(): JSX.Element {
     document.body.style.overflow = "hidden";
   }, []);
   const dispatch = useDispatch();
-  console.log(day);
   return (
     <div className={styles.home}>
       <motion.div
