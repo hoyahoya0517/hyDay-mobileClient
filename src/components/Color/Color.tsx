@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { hyEvent } from "../../api/calendar";
 import styles from "./Color.module.css";
-import { ChromePicker } from "react-color";
+import { SketchPicker } from "react-color";
 
 export default function Color({
   colorModal,
@@ -19,8 +19,6 @@ export default function Color({
   useEffect(() => {
     if (colorModal) {
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
     }
   }, [colorModal]);
   const colorHandle = (color: any) => {
@@ -31,6 +29,7 @@ export default function Color({
   };
   const colorModalHandle = () => {
     setColorModal(false);
+    document.body.style.overflow = "unset";
   };
   const colorStopHandle = (e: any) => {
     e.stopPropagation();
@@ -38,9 +37,10 @@ export default function Color({
   return (
     <div className={styles.colorWrap} onClick={colorModalHandle}>
       <div className={styles.color} onClick={colorStopHandle}>
-        <ChromePicker
+        <SketchPicker
           color={currentHyDayEvent[index].backgroundColor}
           onChangeComplete={colorHandle}
+          width="250px"
         />
       </div>
     </div>
