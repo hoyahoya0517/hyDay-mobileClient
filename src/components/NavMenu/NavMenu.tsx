@@ -36,6 +36,14 @@ export default function NavMenu(): JSX.Element {
         <div className={styles.wishlist}>WISHLIST</div>
         <div className={styles.adult}>19</div>
         <div className={styles.setting}>SETTING</div>
+        <div
+          className={styles.feedback}
+          // onClick={() => {
+          //   navigate("./feedback");
+          // }}
+        >
+          FEEDBACK
+        </div>
         <div className={styles.information}>INFORMATION</div>
       </div>
       <div className={styles.navMenuFooter}>

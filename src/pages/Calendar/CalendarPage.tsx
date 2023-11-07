@@ -103,7 +103,7 @@ export default function CalendarPage(): JSX.Element {
           // dateClick={handleDateClick}
           events={event}
           eventDisplay={"auto"}
-          eventColor={"white"}
+          eventColor={"rgb(198, 91, 14)"}
           eventTextColor={"black"}
           eventOrder={"-id"}
           contentHeight={400}
