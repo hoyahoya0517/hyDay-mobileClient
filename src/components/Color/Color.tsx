@@ -1,7 +1,6 @@
-import { useEffect } from "react";
 import { hyEvent } from "../../api/calendar";
 import styles from "./Color.module.css";
-import { SketchPicker } from "react-color";
+import { TwitterPicker } from "react-color";
 
 export default function Color({
   colorModal,
@@ -16,31 +15,32 @@ export default function Color({
   currentHyDayEvent: hyEvent[];
   setCurrentHyDayEvent: React.Dispatch<React.SetStateAction<hyEvent[]>>;
 }): JSX.Element {
-  useEffect(() => {
-    if (colorModal) {
-      document.body.style.overflow = "hidden";
-    }
-  }, [colorModal]);
   const colorHandle = (color: any) => {
     const array = [...currentHyDayEvent];
     array[index].backgroundColor = color.hex;
     array[index].borderColor = color.hex;
     setCurrentHyDayEvent(array);
   };
-  const colorModalHandle = () => {
-    setColorModal(false);
-    document.body.style.overflow = "unset";
-  };
-  const colorStopHandle = (e: any) => {
-    e.stopPropagation();
-  };
   return (
-    <div className={styles.colorWrap} onClick={colorModalHandle}>
-      <div className={styles.color} onClick={colorStopHandle}>
-        <SketchPicker
+    <div className={styles.colorWrap}>
+      <div className={styles.color}>
+        <TwitterPicker
           color={currentHyDayEvent[index].backgroundColor}
           onChangeComplete={colorHandle}
-          width="250px"
+          width="276px"
+          triangle="hide"
+          colors={[
+            "#C65B0E",
+            "#FCB900",
+            "#7BDCB5",
+            "#00D084",
+            "#8ED1FC",
+            "#0693E3",
+            "#ABB8C3",
+            "#EB144C",
+            "#F78DA7",
+            "#9900EF",
+          ]}
         />
       </div>
     </div>

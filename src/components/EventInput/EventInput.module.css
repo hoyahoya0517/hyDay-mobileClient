@@ -4,6 +4,7 @@
   align-items: center;
   height: 35px;
   padding-top: 5px;
+  position: relative;
 }
 .eventInputMain {
   flex-basis: 95%;

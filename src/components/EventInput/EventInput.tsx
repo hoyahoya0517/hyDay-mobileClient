@@ -21,7 +21,8 @@ export default function EventInput({
     setCurrentHyDayEvent(array);
   };
   const colorModalHandle = () => {
-    setColorModal(true);
+    if (colorModal) setColorModal(false);
+    else setColorModal(true);
   };
   return (
     <div className={styles.eventInput}>

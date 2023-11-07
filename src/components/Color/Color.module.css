@@ -1,15 +1,5 @@
 .colorWrap {
-  position: fixed;
-  background-color: rgba(55, 55, 55, 0.518);
-  z-index: 9999;
-  top: 50%;
-  left: 50%;
-  height: 100%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.color {
+  position: absolute;
+  bottom: 100%;
+  right: 0%;
 }
