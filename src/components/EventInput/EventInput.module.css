@@ -5,8 +5,12 @@
   height: 35px;
   padding-top: 5px;
 }
+.eventInputMain {
+  flex-basis: 95%;
+  height: 100%;
+}
 
-.eventInput input {
+.eventInputMain input {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 1rem;
   width: 100%;
@@ -15,4 +19,9 @@
   outline: none;
   padding: 0 3px;
   background-color: rgba(255, 255, 255, 0.45);
+}
+
+.color {
+  flex-basis: 5%;
+  height: 100%;
 }
