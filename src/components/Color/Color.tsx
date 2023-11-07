@@ -20,6 +20,7 @@ export default function Color({
     array[index].backgroundColor = color.hex;
     array[index].borderColor = color.hex;
     setCurrentHyDayEvent(array);
+    setColorModal(false);
   };
   return (
     <div className={styles.colorWrap}>
@@ -34,11 +35,11 @@ export default function Color({
             "#FCB900",
             "#7BDCB5",
             "#00D084",
-            "#8ED1FC",
+            "#ABCDE2",
             "#0693E3",
             "#ABB8C3",
             "#EB144C",
-            "#F78DA7",
+            "#FEB8A9",
             "#9900EF",
           ]}
         />
