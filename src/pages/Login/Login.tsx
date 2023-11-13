@@ -73,8 +73,9 @@ export default function Login(): JSX.Element {
       >
         <img src="https://res.cloudinary.com/hoyahoya/image/upload/v1699445908/hy/pngwing.com_4_ndqhxj.png" />
         {inputOn && (
-          <div className={styles.kittyInput}>
+          <div className={styles.kittyInside}>
             <input value={code} onChange={codeHandle} maxLength={4} />
+            <button type="submit">SIGN IN</button>
           </div>
         )}
       </form>
