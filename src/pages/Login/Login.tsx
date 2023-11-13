@@ -42,10 +42,8 @@ export default function Login(): JSX.Element {
   }, []);
   const dispatch = useDispatch();
   const kittyHandle = () => {
-    setInputOn(true);
-  };
-  const kittyHandleOff = () => {
-    setInputOn(false);
+    if (inputOn) setInputOn(false);
+    else setInputOn(true);
   };
   const codeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCode(e.target.value);
@@ -60,7 +58,7 @@ export default function Login(): JSX.Element {
   return (
     <div className={styles.login}>
       <video
-        onClick={kittyHandleOff}
+        onClick={kittyHandle}
         autoPlay
         muted
         loop
@@ -73,10 +71,7 @@ export default function Login(): JSX.Element {
         onSubmit={submitHandle}
         className={inputOn ? `${styles.kittyOn}` : `${styles.kittyOff}`}
       >
-        <img
-          onClick={kittyHandle}
-          src="https://res.cloudinary.com/hoyahoya/image/upload/v1699445908/hy/pngwing.com_4_ndqhxj.png"
-        />
+        <img src="https://res.cloudinary.com/hoyahoya/image/upload/v1699445908/hy/pngwing.com_4_ndqhxj.png" />
         {inputOn && (
           <div className={styles.kittyInput}>
             <input value={code} onChange={codeHandle} maxLength={4} />

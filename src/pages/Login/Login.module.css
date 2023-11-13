@@ -1,10 +1,9 @@
 .login {
   width: auto;
-  min-height: 100%;
+  height: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
-  position: relative;
 }
 .loginVideo {
   position: fixed;
@@ -21,7 +20,7 @@
   width: 200px;
   flex-direction: row;
   position: fixed;
-  bottom: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.5s;
@@ -29,11 +28,12 @@
 }
 .kittyOff {
   display: flex;
-  width: 70px;
+  width: 200px;
   flex-direction: row;
   position: fixed;
-  bottom: 3.2%;
-  left: 5.5%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: 0.5s;
   z-index: 2222;
 }
