@@ -3,18 +3,45 @@ import { BsX } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { NavStateType, navOff } from "../../redux/redux";
 import { useNavigate } from "react-router-dom";
+import { BsPerson } from "react-icons/bs";
+import { useQueryClient } from "@tanstack/react-query";
+import { removeToken } from "../../api/calendar";
 
 export default function NavMenu(): JSX.Element {
+  const queryClient = useQueryClient();
+  const user = queryClient.getQueryData(["user"]);
   const navigate = useNavigate();
   const navState = useSelector((state: NavStateType) => state.nav);
   const dispatch = useDispatch();
   const handleX = () => {
     dispatch(navOff());
   };
+  const logoutHandle = () => {
+    queryClient.setQueryData(["user"], null);
+    removeToken();
+  };
   return (
     <div className={navState ? `${styles.navMenu}` : `${styles.navMenuHidden}`}>
       <div className={styles.x}>
         <BsX size={35} onClick={handleX} className={styles.xIcon} />
+      </div>
+      <div className={styles.navLogin}>
+        {user ? (
+          <span>
+            <h3>{`${user}`}</h3>
+            <h2 onClick={logoutHandle}>LOGOUT</h2>
+          </span>
+        ) : (
+          <div
+            className={styles.navLoginReady}
+            onClick={() => {
+              navigate("./login");
+            }}
+          >
+            <BsPerson />
+            LOGIN
+          </div>
+        )}
       </div>
       <div className={styles.navMenuCenter}>
         <div

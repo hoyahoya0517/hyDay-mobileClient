@@ -37,8 +37,36 @@
   cursor: pointer;
 }
 
+.navLogin {
+  display: flex;
+  flex-basis: 15%;
+  padding: 0 20px;
+  align-items: center;
+}
+.navLogin span {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.navLogin h3 {
+  font-size: 14px;
+  background-color: #b4fcbe;
+  padding: 0 5px;
+}
+.navLogin h2 {
+  font-size: 14px;
+  cursor: pointer;
+}
+.navLoginReady {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
 .navMenuCenter {
-  flex-basis: 80%;
+  flex-basis: 60%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -46,7 +74,8 @@
   line-height: 30px;
   letter-spacing: 0.5px;
   font-weight: 700;
-  padding: 70px 20px;
+  padding: 0 20px;
+  justify-content: center;
 }
 .home {
   cursor: pointer;
@@ -60,9 +89,6 @@
 .adult {
   cursor: pointer;
 }
-.adult:hover {
-  color: red;
-}
 .setting {
   cursor: pointer;
 }
@@ -74,7 +100,7 @@
 }
 
 .navMenuFooter {
-  flex-basis: 25%;
+  flex-basis: 20%;
   border-top: solid 1px #000;
   margin: 0 20px;
 }
