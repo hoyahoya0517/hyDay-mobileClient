@@ -71,3 +71,19 @@ function getToken() {
 export function removeToken() {
   localStorage.removeItem("kitty_token");
 }
+
+export async function changeName(newname: string) {
+  const token = getToken();
+  if (!token) return;
+  const data = await axios.post(
+    `${process.env.REACT_APP_BASEURL}/auth/name`,
+    { newname },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  if (!data) return;
+  return data.data.newUsername;
+}

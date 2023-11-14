@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavStateType, navOff } from "../../redux/redux";
 import { useNavigate } from "react-router-dom";
 import { BsPerson } from "react-icons/bs";
-import { useQueryClient } from "@tanstack/react-query";
-import { removeToken } from "../../api/calendar";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { changeName, removeToken } from "../../api/calendar";
+import { useState, useEffect } from "react";
+import { BsScissors } from "react-icons/bs";
 
 export default function NavMenu(): JSX.Element {
   const queryClient = useQueryClient();
@@ -13,24 +15,87 @@ export default function NavMenu(): JSX.Element {
   const navigate = useNavigate();
   const navState = useSelector((state: NavStateType) => state.nav);
   const dispatch = useDispatch();
+  const [userMenuOn, setUserMenuOn] = useState(false);
+  const [nameChangeOn, setNameChangeOn] = useState(false);
+  const [nameInput, setNameInput] = useState<string>("");
   const handleX = () => {
     dispatch(navOff());
+  };
+  const userMenuHandle = () => {
+    if (userMenuOn) {
+      setUserMenuOn(false);
+      setNameChangeOn(false);
+      setNameInput("");
+    } else {
+      setUserMenuOn(true);
+      setNameChangeOn(false);
+      setNameInput("");
+    }
+  };
+  const nameChangeOnClick = () => {
+    setNameChangeOn(true);
+  };
+  const nameChangeInputHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNameInput(e.target.value);
+  };
+  const nameChangeHandle = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    nameChangeMutate.mutate({ newname: nameInput });
   };
   const logoutHandle = () => {
     queryClient.setQueryData(["user"], null);
     removeToken();
   };
+  const nameChangeMutate = useMutation({
+    mutationFn: ({ newname }: { newname: string }) => changeName(newname),
+    onSuccess(data) {
+      queryClient.setQueryData(["user"], data);
+    },
+  });
+  useEffect(() => {
+    setUserMenuOn(false);
+    setNameChangeOn(false);
+  }, [user]);
   return (
     <div className={navState ? `${styles.navMenu}` : `${styles.navMenuHidden}`}>
       <div className={styles.x}>
         <BsX size={35} onClick={handleX} className={styles.xIcon} />
       </div>
-      <div className={styles.navLogin}>
+      <div className={user ? `${styles.navLoginOn}` : `${styles.navLoginOff}`}>
         {user ? (
-          <span>
-            <h3>{`${user}`}</h3>
-            <h2 onClick={logoutHandle}>LOGOUT</h2>
-          </span>
+          <div className={styles.navLoginOk}>
+            <div>
+              <span onClick={userMenuHandle}>{`${user}`}</span>
+            </div>
+            <div
+              className={
+                userMenuOn ? `${styles.userMenuOn}` : `${styles.userMenuOff}`
+              }
+            >
+              {nameChangeOn ? (
+                <form onSubmit={nameChangeHandle} className={styles.nameChange}>
+                  <input
+                    value={nameInput}
+                    onChange={nameChangeInputHandle}
+                    maxLength={6}
+                  />
+                  <button type="submit">
+                    <BsScissors size={15} />
+                  </button>
+                </form>
+              ) : (
+                <div
+                  className={styles.nameChangeMenu}
+                  onClick={nameChangeOnClick}
+                >
+                  NAME CHANGE
+                </div>
+              )}
+              <div className={styles.logout} onClick={logoutHandle}>
+                LOGOUT
+              </div>
+            </div>
+          </div>
         ) : (
           <div
             className={styles.navLoginReady}
