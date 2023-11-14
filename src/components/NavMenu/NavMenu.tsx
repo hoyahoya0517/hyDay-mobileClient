@@ -79,7 +79,14 @@ export default function NavMenu(): JSX.Element {
                     onChange={nameChangeInputHandle}
                     maxLength={6}
                   />
-                  <button type="submit">SUBMIT</button>
+                  <div
+                    onClick={() => {
+                      nameChangeMutate.mutate({ newname: nameInput });
+                    }}
+                    className={styles.submitButton}
+                  >
+                    SUBMIT
+                  </div>
                 </form>
               ) : (
                 <div

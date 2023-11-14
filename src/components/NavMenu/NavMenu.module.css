@@ -89,15 +89,10 @@
   font-family: "NotoSansKR", "Poppins", sans-serif !important;
   height: 24px;
 }
-.nameChange button {
+.submitButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  outline: none;
-  border: 0px;
-  font-family: "NotoSansKR", "Poppins", sans-serif;
-  font-size: 14px;
-  height: 100%;
 }
 
 .navLoginReady {
