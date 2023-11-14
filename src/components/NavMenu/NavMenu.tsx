@@ -79,9 +79,7 @@ export default function NavMenu(): JSX.Element {
                     onChange={nameChangeInputHandle}
                     maxLength={6}
                   />
-                  <button type="submit">
-                    <BsScissors size={15} />
-                  </button>
+                  <button type="submit">SUBMIT</button>
                 </form>
               ) : (
                 <div
