@@ -60,12 +60,10 @@
 .navLoginOk span {
   font-size: 14px;
   background-color: #b4fcbe;
-  cursor: none;
 }
 .userMenuOn {
   display: flex;
   flex-direction: column;
-  cursor: none;
 }
 .nameChangeMenu {
   height: 24px;
@@ -112,8 +110,7 @@
   line-height: 30px;
   letter-spacing: 0.5px;
   font-weight: 700;
-  padding: 0 20px;
-  justify-content: center;
+  padding: 30px 20px 0 20px;
 }
 .home {
   cursor: pointer;
