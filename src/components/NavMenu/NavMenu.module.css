@@ -11,6 +11,7 @@
   transition: 0.5s;
   z-index: 8888;
   border-right: 1px solid black;
+  -webkit-backface-visibility: hidden;
 }
 
 .navMenuHidden {
