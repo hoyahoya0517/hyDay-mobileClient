@@ -39,13 +39,13 @@
 
 .navLoginOn {
   display: flex;
-  flex-basis: 15%;
+  flex-basis: 20%;
   padding: 0 20px;
   align-items: end;
 }
 .navLoginOff {
   display: flex;
-  flex-basis: 15%;
+  flex-basis: 20%;
   padding: 0 20px;
   align-items: center;
 }
@@ -53,12 +53,13 @@
   font-size: 14px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+}
+.navLoginOkWelcome {
+  height: 24px;
 }
 .navLoginOk span {
   font-size: 14px;
   background-color: #b4fcbe;
-  padding: 0 3px;
 }
 .userMenuOn {
   visibility: visible;
@@ -100,10 +101,9 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  cursor: pointer;
 }
 .navMenuCenter {
-  flex-basis: 60%;
+  flex-basis: 55%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -111,8 +111,7 @@
   line-height: 30px;
   letter-spacing: 0.5px;
   font-weight: 700;
-  padding: 0 20px;
-  justify-content: center;
+  padding: 20px 20px 0 20px;
 }
 .home {
   cursor: pointer;

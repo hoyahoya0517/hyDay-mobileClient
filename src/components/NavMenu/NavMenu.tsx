@@ -64,8 +64,8 @@ export default function NavMenu(): JSX.Element {
       <div className={user ? `${styles.navLoginOn}` : `${styles.navLoginOff}`}>
         {user ? (
           <div className={styles.navLoginOk}>
-            <div>
-              <span onClick={userMenuHandle}>{`${user}`}</span>
+            <div className={styles.navLoginOkWelcome} onClick={userMenuHandle}>
+              WELCOME <span>{`${user}`}</span>
             </div>
             <div
               className={
