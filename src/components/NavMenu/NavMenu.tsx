@@ -24,8 +24,6 @@ export default function NavMenu(): JSX.Element {
   const userMenuHandle = () => {
     if (userMenuOn) {
       setUserMenuOn(false);
-      setNameChangeOn(false);
-      setNameInput("");
     } else {
       setUserMenuOn(true);
       setNameChangeOn(false);

@@ -11,7 +11,6 @@
   transition: 0.5s;
   z-index: 8888;
   border-right: 1px solid black;
-  -webkit-backface-visibility: hidden;
 }
 
 .navMenuHidden {
@@ -42,7 +41,7 @@
   display: flex;
   flex-basis: 20%;
   padding: 0 20px;
-  align-items: end;
+  align-items: center;
 }
 .navLoginOff {
   display: flex;
@@ -54,6 +53,7 @@
   font-size: 14px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .navLoginOkWelcome {
   height: 24px;
@@ -61,10 +61,23 @@
 .navLoginOk span {
   font-size: 14px;
   background-color: #b4fcbe;
+  padding: 0 3px;
 }
 .userMenuOn {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 105%;
+  left: 0%;
+  transition: 0.5s;
+}
+.userMenuOff {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 105%;
+  left: -200%;
+  transition: 0.5s;
 }
 .nameChangeMenu {
   height: 24px;
@@ -72,9 +85,7 @@
 .logout {
   height: 24px;
 }
-.userMenuOff {
-  visibility: hidden;
-}
+
 .nameChange {
   display: flex;
   align-items: center;
@@ -111,7 +122,7 @@
   line-height: 30px;
   letter-spacing: 0.5px;
   font-weight: 700;
-  padding: 30px 20px 0 20px;
+  padding: 40px 20px 0 20px;
 }
 .home {
   cursor: pointer;
