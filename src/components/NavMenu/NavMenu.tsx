@@ -4,14 +4,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavStateType, navOff } from "../../redux/redux";
 import { useNavigate } from "react-router-dom";
 import { BsPerson } from "react-icons/bs";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { changeName, removeToken } from "../../api/calendar";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { changeName, me, removeToken } from "../../api/calendar";
 import { useState, useEffect } from "react";
 import { BsScissors } from "react-icons/bs";
 
 export default function NavMenu(): JSX.Element {
   const queryClient = useQueryClient();
-  const user = queryClient.getQueryData(["user"]);
+  const { isLoading, data: user } = useQuery(
+    ["user"],
+    async () => {
+      const data = await me();
+      return data;
+    },
+    {
+      onSuccess() {
+        console.log("autoLogin success");
+      },
+      onError() {
+        console.log("autoLogin error");
+        queryClient.setQueryData(["user"], null);
+      },
+      retry: 1,
+    }
+  );
   const navigate = useNavigate();
   const navState = useSelector((state: NavStateType) => state.nav);
   const dispatch = useDispatch();
@@ -133,9 +149,9 @@ export default function NavMenu(): JSX.Element {
         <div className={styles.setting}>SETTING</div>
         <div
           className={styles.feedback}
-          // onClick={() => {
-          //   navigate("./feedback");
-          // }}
+          onClick={() => {
+            navigate("./feedback");
+          }}
         >
           FEEDBACK
         </div>

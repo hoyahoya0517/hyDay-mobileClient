@@ -16,11 +16,11 @@ import { ToastContainer } from "react-toastify";
 import { useSelector } from "react-redux";
 
 export default function CalendarPage(): JSX.Element {
+  // const today = moment(new Date()).format("YYYY-MM-DD");
   useEffect(() => {
     dispatch(navOff());
   }, []);
   const dispatch = useDispatch();
-  // const today = moment(new Date()).format("YYYY-MM-DD");
   const navState = useSelector((state: NavStateType) => state.nav);
   useEffect(() => {
     if (navState) document.body.style.overflow = "hidden";

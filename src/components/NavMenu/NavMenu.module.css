@@ -81,6 +81,7 @@
 }
 .nameChangeMenu {
   height: 24px;
+  white-space: nowrap;
 }
 .logout {
   height: 24px;

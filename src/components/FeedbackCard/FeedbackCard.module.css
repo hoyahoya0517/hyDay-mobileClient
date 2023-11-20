@@ -1,0 +1,60 @@
+.feedbackCard {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid rgba(61, 61, 61, 0.7);
+}
+.feedbackCardWrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px 20px;
+}
+.card_top {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 6px;
+}
+.card_top_username {
+  font-size: 15px;
+  font-weight: 700;
+  background-color: #b4fcbe;
+  padding: 0 3px;
+}
+.card_top_time {
+  font-size: 15px;
+  color: rgba(61, 61, 61, 0.7);
+}
+.card_center {
+  width: 100%;
+  font-size: 15px;
+  padding-top: 5px;
+}
+.card_center_text {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+.feedbackTextarea {
+  width: 100%;
+  word-wrap: break-word;
+  font-family: "NotoSansKR", "Poppins", sans-serif !important;
+  font-size: 15px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  resize: none;
+  border: 0;
+  background-color: rgba(229, 229, 229, 0.45);
+  padding: 5px 0;
+}
+
+.card_bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0 0 0;
+  align-items: flex-end;
+}
+.card_comment {
+  display: flex;
+  flex-direction: column;
+}

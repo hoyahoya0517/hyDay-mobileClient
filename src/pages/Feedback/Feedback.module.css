@@ -1,0 +1,47 @@
+.feedback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.feedbackNav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  align-items: center;
+  padding: 0 15px;
+  border-bottom: 1px solid rgba(49, 49, 49, 0.374);
+  z-index: 2;
+}
+.user {
+  display: flex;
+  flex-basis: 15%;
+  justify-content: flex-start;
+  font-size: 14px;
+}
+.logo {
+  display: flex;
+  flex-basis: 70%;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(198, 91, 14);
+}
+.create {
+  display: flex;
+  flex-basis: 15%;
+  justify-content: flex-end;
+}
+.feedbackMain {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

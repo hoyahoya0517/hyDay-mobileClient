@@ -17,6 +17,21 @@ export type hyDay = {
   memo: string;
 } | null;
 
+export type feedback = {
+  id: string;
+  text: string;
+  createdAt: string;
+  code: string;
+  username: string;
+  comments: comment[];
+};
+export type comment = {
+  id: string;
+  text: string;
+  createdAt: string;
+  code: string;
+  username: string;
+};
 export async function getHyDays() {
   const hydays = await axios.get(`${process.env.REACT_APP_BASEURL}/calendar`);
   return hydays.data;
@@ -86,4 +101,9 @@ export async function changeName(newname: string) {
   );
   if (!data) return;
   return data.data.newUsername;
+}
+
+export async function getFeedback() {
+  const feedback = await axios.get(`${process.env.REACT_APP_BASEURL}/feedback`);
+  return feedback.data;
 }

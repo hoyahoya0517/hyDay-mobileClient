@@ -1,0 +1,36 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 15px;
+}
+.comment_top {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 6px;
+}
+.comment_top_username {
+  font-size: 15px;
+  font-weight: 700;
+}
+.comment_top_time {
+  font-size: 15px;
+  color: rgba(61, 61, 61, 0.7);
+}
+.comment_center {
+  width: 100%;
+  font-size: 15px;
+  padding-top: 5px;
+}
+.comment_center_text {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+.dotMenu {
+  position: absolute;
+  top: 7%;
+  right: 0.5%;
+  display: flex;
+  align-items: center;
+}

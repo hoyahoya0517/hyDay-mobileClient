@@ -1,0 +1,17 @@
+.createFeedbackWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #0000006f;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.createFeedback {
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+}
