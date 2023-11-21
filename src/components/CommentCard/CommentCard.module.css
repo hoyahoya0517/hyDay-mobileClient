@@ -37,8 +37,8 @@
 
 .dotMenuMain {
   position: absolute;
-  top: 190%;
-  right: 0.5%;
+  top: 3%;
+  right: 130%;
   display: flex;
   align-items: center;
 }
