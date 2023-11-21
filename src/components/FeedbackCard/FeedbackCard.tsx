@@ -73,8 +73,9 @@ export default function FeedbackCard({
   const createFeedbackCommentMutate = useMutation({
     mutationFn: ({ text, id }: { text: string; id: string }) =>
       createFeedbackComment(text, id),
-    onSuccess(data) {
+    onSuccess() {
       queryClient.invalidateQueries(["feedback"]);
+      setCommentInput("");
     },
   });
   const handleCommentForm = async (e: React.ChangeEvent<HTMLFormElement>) => {

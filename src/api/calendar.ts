@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment";
 
 export type hyEvent = {
   id?: string;
@@ -118,7 +119,14 @@ export async function changeName(newname: string) {
 
 export async function getFeedback() {
   const feedback = await axios.get(`${process.env.REACT_APP_BASEURL}/feedback`);
-  return feedback.data;
+  const data: feedback[] = feedback.data;
+  data.sort((a, b) => {
+    return (
+      Number(moment(b.createdAt).format("YYYYMMDDHHmmss")) -
+      Number(moment(a.createdAt).format("YYYYMMDDHHmmss"))
+    );
+  });
+  return data;
 }
 
 export async function createFeedback(text: string) {

@@ -24,6 +24,7 @@
   flex-basis: 15%;
   justify-content: flex-start;
   font-size: 14px;
+  font-weight: 700;
 }
 .logo {
   display: flex;

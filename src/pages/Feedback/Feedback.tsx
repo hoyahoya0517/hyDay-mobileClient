@@ -84,7 +84,7 @@ export default function Feedback(): JSX.Element {
           </div>
         </div>
         <div className={styles.feedbackMain}>
-          {feedbacks.map((feedback: feedback) => {
+          {feedbacks?.map((feedback: feedback) => {
             return <FeedbackCard key={feedback.id} feedback={feedback} />;
           })}
         </div>
