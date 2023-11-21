@@ -54,13 +54,13 @@ export default function FeedbackCard({
   };
   const handleDelete = () => {
     Swal.fire({
-      title: "삭제하시겠습니까?",
+      title: "Are you sure?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "네!",
-      cancelButtonText: "아니요..",
+      confirmButtonText: "Yes!",
+      cancelButtonText: "No..",
     }).then(async (result) => {
       if (result.isConfirmed) {
         const code = await meReturnCode();
