@@ -2,11 +2,15 @@ import styles from "./Loading.module.css";
 import { GiMushroom } from "react-icons/gi";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { navOff } from "../../redux/redux";
 
 export default function Home(): JSX.Element {
   useEffect(() => {
+    dispatch(navOff());
     document.body.style.overflow = "hidden";
   }, []);
+  const dispatch = useDispatch();
   return (
     <div className={styles.loading}>
       <motion.div

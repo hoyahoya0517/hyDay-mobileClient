@@ -3,14 +3,14 @@ import styles from "./Feedback.module.css";
 import { feedback, getFeedback, me } from "../../api/calendar";
 import Loading from "../../components/Loading/Loading";
 import FeedbackCard from "../../components/FeedbackCard/FeedbackCard";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { NavStateType, navOff } from "../../redux/redux";
-import { BsWrench, BsFileEarmarkPlus } from "react-icons/bs";
+import { BsFileEarmarkPlus } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import CreateFeedback from "../../components/CreateFeedback/CreateFeedback";
+import { ToastContainer } from "react-toastify";
 
 export default function Feedback(): JSX.Element {
   const queryClient = useQueryClient();
@@ -45,6 +45,10 @@ export default function Feedback(): JSX.Element {
   const upScroll = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  useEffect(() => {
+    if (createOn) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "unset";
+  }, [createOn]);
   const { isLoading, data: feedbacks } = useQuery(["feedback"], async () => {
     const feedback = await getFeedback();
     return feedback;
@@ -68,7 +72,7 @@ export default function Feedback(): JSX.Element {
             )}
           </div>
           <div className={styles.logo}>
-            <span onClick={upScroll}>Feedback</span>
+            <span onClick={upScroll}>DanDan</span>
           </div>
           <div
             onClick={() => {
@@ -86,6 +90,18 @@ export default function Feedback(): JSX.Element {
         </div>
       </div>
       {createOn && <CreateFeedback setCreateOn={setCreateOn} />}
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 }

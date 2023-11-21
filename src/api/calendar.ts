@@ -27,6 +27,7 @@ export type feedback = {
 };
 export type comment = {
   id: string;
+  parentId: string;
   text: string;
   createdAt: string;
   code: string;
@@ -77,6 +78,18 @@ export async function me() {
   return data.data.username;
 }
 
+export async function meReturnCode() {
+  const token = getToken();
+  if (!token) return;
+  const data = await axios.get(`${process.env.REACT_APP_BASEURL}/auth/me`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  if (!data) return;
+  return data.data.code;
+}
+
 function saveToken(token: string) {
   localStorage.setItem("kitty_token", token);
 }
@@ -106,4 +119,75 @@ export async function changeName(newname: string) {
 export async function getFeedback() {
   const feedback = await axios.get(`${process.env.REACT_APP_BASEURL}/feedback`);
   return feedback.data;
+}
+
+export async function createFeedback(text: string) {
+  const token = getToken();
+  if (!token) return;
+  return axios.post(
+    `${process.env.REACT_APP_BASEURL}/feedback`,
+    {
+      text,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+}
+
+export async function updateFeedback(text: string, id: string) {
+  const token = getToken();
+  if (!token) return;
+  return axios.put(
+    `${process.env.REACT_APP_BASEURL}/feedback/${id}`,
+    {
+      text,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+}
+
+export async function deleteFeedback(id: string) {
+  const token = getToken();
+  if (!token) return;
+  return axios.delete(`${process.env.REACT_APP_BASEURL}/feedback/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+}
+
+export async function createFeedbackComment(text: string, id: string) {
+  const token = getToken();
+  if (!token) return;
+  return await axios.post(
+    `${process.env.REACT_APP_BASEURL}/feedback/comment/${id}`,
+    {
+      text,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+}
+
+export async function deleteFeedbackComment(id: string, commentId: string) {
+  const token = getToken();
+  if (!token) return;
+  return axios.delete(
+    `${process.env.REACT_APP_BASEURL}/feedback/comment/${id}/${commentId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 }

@@ -34,3 +34,11 @@
   display: flex;
   align-items: center;
 }
+
+.dotMenuMain {
+  position: absolute;
+  top: 168%;
+  right: 0.5%;
+  display: flex;
+  align-items: center;
+}
