@@ -11,17 +11,17 @@
   gap: 6px;
 }
 .comment_top_username {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
 }
 .comment_top_time {
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(61, 61, 61, 0.7);
 }
 .comment_center {
   width: 100%;
-  font-size: 15px;
-  padding-top: 5px;
+  font-size: 16px;
+  padding-top: 10px;
 }
 .comment_center_text {
   word-wrap: break-word;
@@ -37,7 +37,7 @@
 
 .dotMenuMain {
   position: absolute;
-  top: 168%;
+  top: 190%;
   right: 0.5%;
   display: flex;
   align-items: center;

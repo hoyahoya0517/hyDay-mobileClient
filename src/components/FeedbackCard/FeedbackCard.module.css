@@ -16,18 +16,18 @@
   gap: 6px;
 }
 .card_top_username {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   background-color: #b4fcbe;
 }
 .card_top_time {
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(61, 61, 61, 0.7);
 }
 .card_center {
   width: 100%;
-  font-size: 15px;
-  padding-top: 5px;
+  font-size: 16px;
+  padding-top: 10px;
 }
 .card_center_text {
   word-wrap: break-word;
@@ -37,7 +37,7 @@
   width: 100%;
   word-wrap: break-word;
   font-family: "NotoSansKR", "Poppins", sans-serif !important;
-  font-size: 15px;
+  font-size: 16px;
   white-space: pre-wrap;
   overflow: hidden;
   resize: none;
@@ -61,7 +61,7 @@
 }
 .commentInput {
   width: 100%;
-  height: 25px;
+  height: 28px;
   margin-top: 15px;
   display: flex;
   flex-direction: row;
@@ -80,7 +80,7 @@
 }
 .commentInputInput input {
   font-family: "NotoSansKR", "Poppins", sans-serif !important;
-  font-size: 15px;
+  font-size: 16px;
   width: 100%;
   height: 100%;
   border-radius: 5px;

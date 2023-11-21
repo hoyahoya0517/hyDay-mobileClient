@@ -10,7 +10,7 @@ import {
 } from "../../api/calendar";
 import styles from "./FeedbackCard.module.css";
 import { GoComment, GoPencil, GoChecklist, GoTrash } from "react-icons/go";
-import { KeyboardEvent, useState, useRef } from "react";
+import { useState } from "react";
 import ReactTextareaAutosize from "react-textarea-autosize";
 import CommentCard from "../CommentCard/CommentCard";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -55,13 +55,12 @@ export default function FeedbackCard({
   const handleDelete = () => {
     Swal.fire({
       title: "삭제하시겠습니까?",
-      text: "삭제하면 복구할 수 없습니다.",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "네!",
-      cancelButtonText: "아니요!",
+      cancelButtonText: "아니요..",
     }).then(async (result) => {
       if (result.isConfirmed) {
         const code = await meReturnCode();
@@ -160,7 +159,6 @@ export default function FeedbackCard({
       theme: "colored",
     });
   };
-  const scrollRef = useRef<HTMLDivElement | null>(null);
   const [updateOn, setUpdateOn] = useState<boolean>(false);
   const [updateInput, setUpdateInput] = useState(feedback.text);
   const [commentOn, setCommentOn] = useState<boolean>(false);
@@ -172,12 +170,6 @@ export default function FeedbackCard({
   };
   const commenOnHandle = () => {
     setCommentOn((prev) => !prev);
-  };
-  const handleEnter = (e: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === "Enter") {
-      if (scrollRef.current)
-        scrollRef.current.scrollIntoView({ behavior: "smooth" });
-    }
   };
   return (
     <div className={styles.feedbackCard}>
@@ -195,7 +187,6 @@ export default function FeedbackCard({
                 autoFocus
                 className={styles.feedbackTextarea}
                 spellCheck={false}
-                onKeyDown={handleEnter}
                 value={updateInput}
                 onChange={(ev) => setUpdateInput(ev.target.value)}
               />
@@ -204,7 +195,7 @@ export default function FeedbackCard({
             )}
           </div>
         </div>
-        <div ref={scrollRef} className={styles.card_bottom}>
+        <div className={styles.card_bottom}>
           <GoComment
             onClick={commenOnHandle}
             size={21}
