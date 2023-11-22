@@ -62,7 +62,7 @@
 .card_bottom_comment_length {
   position: absolute;
   left: 130%;
-  bottom: -5%;
+  bottom: -10%;
   color: rgba(61, 61, 61, 0.7);
 }
 .card_comment {
