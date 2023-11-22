@@ -176,7 +176,19 @@ export default function FeedbackCard({
     <div className={styles.feedbackCard}>
       <div className={styles.feedbackCardWrap}>
         <div className={styles.card_top}>
-          <div className={styles.card_top_username}>{feedback.username}</div>
+          <div
+            style={{
+              backgroundColor:
+                feedback.code === "1901"
+                  ? "#FEB8A9"
+                  : feedback.code === "0517"
+                  ? "#ABCDE2"
+                  : "black",
+            }}
+            className={styles.card_top_username}
+          >
+            {feedback.username}
+          </div>
           <div className={styles.card_top_time}>
             {timeChange(feedback.createdAt)}
           </div>
@@ -197,13 +209,18 @@ export default function FeedbackCard({
           </div>
         </div>
         <div className={styles.card_bottom}>
-          <GoComment
-            onClick={commenOnHandle}
-            size={21}
-            style={{
-              color: commentOn ? "rgb(198, 91, 14)" : "rgba(61, 61, 61, 0.7)",
-            }}
-          />
+          <div className={styles.card_bottom_comment}>
+            <GoComment
+              onClick={commenOnHandle}
+              size={21}
+              style={{
+                color: commentOn ? "rgb(198, 91, 14)" : "rgba(61, 61, 61, 0.7)",
+              }}
+            />
+            <p className={styles.card_bottom_comment_length}>
+              {feedback.comments.length}
+            </p>
+          </div>
           <GoPencil
             onClick={updateOnHandle}
             size={21}
